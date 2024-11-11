@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="addressbean"
+		class="SpringCorePractice.SpringCorePracticeDemo.Address">
+		<constructor-arg value="Jaunpur" />
+		<constructor-arg value="UP" />
+		<constructor-arg value="India" />
+	</bean>
+	<bean id="studentbean11" name="studentBeanAlias1, studentBeanAlias2"
+		class="SpringCorePractice.SpringCorePracticeDemo.Student">
+		<property name="name" value="Vimal Jaiswal"></property>
+		<constructor-arg>
+			<ref bean="addressbean"/>
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>"789055"</value>
+				<value>"789011"</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="Statement" value="Sun rises from east" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+</beans>
